@@ -1,0 +1,64 @@
+### POST user
+POST http://localhost:3001/api/v1/users
+Content-Type: application/json
+
+{
+    "username": "Testikäyttis3",
+    "password": "testitesti",
+    "email": "testi3@esimerkki.fi"
+}
+
+### POST login
+POST http://localhost:3001/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "username": "Testikäyttis",
+    "password": "testitesti"
+}
+
+### GET email
+GET http://localhost:3001/api/v1/users/email
+Content-Type: application/json
+
+{
+    "email": "testi2@esimerkki.fi"
+}
+
+### GET username
+GET http://localhost:3001/api/v1/users/username/username
+Content-Type: application/json
+
+{
+    "username": "Testikäyttis"
+}
+
+### GET token/user
+GET http://localhost:3001/api/v1/users/token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJsZXZlbF9uYW1lIjoiVXNlciIsImlhdCI6MTcwNTU3NzQ2N30.NpkjSQ-z9pG01Ng46PxAkWVK8rl5ypFjtu0Tzb8Q4pU
+
+### GET medias
+GET http://localhost:3000/api/v1/media
+
+### POST media upload
+POST http://localhost:3002/api/v1/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJsZXZlbF9uYW1lIjoiVXNlciIsImlhdCI6MTcwNTU3NzQ2N30.NpkjSQ-z9pG01Ng46PxAkWVK8rl5ypFjtu0Tzb8Q4pU
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="image.jpg"
+Content-Type: image/jpeg
+
+ ./kissa.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### POST media
+POST http://localhost:3000/api/v1/media
+
+{
+  "filename": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJsZXZlbF9uYW1lIjoiVXNlciIsImlhdCI6MTcwNTU3NzQ2N30.NpkjSQ-z9pG01Ng46PxAkWVK8rl5ypFjtu0Tzb8Q4pU",
+  "media_type": "image/jpeg",
+  "filesize": "7535",
+  "title": "Testikuva",
+  "description": "Testikuvaus"
+}
