@@ -23,7 +23,6 @@ type MediaResponse {
 }
 
 input MediaItemInput {
-  user_id: ID!
   filename: String!
   filesize: Int!
   media_type: String!
